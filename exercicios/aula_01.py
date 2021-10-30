@@ -12,7 +12,7 @@ def retorna_produtos_de_dicio_de_bases_e_expoentes(dicio: Dict[int, range]) -> L
 
     Passar como input dicionário em que a chave são bases (fatores primos ou não),
     e seus valores são range com expoentes possíveis.
-            
+
     :param dicio:
     :return:
     """
