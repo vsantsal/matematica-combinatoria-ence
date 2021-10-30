@@ -32,6 +32,7 @@ def test_gera_subconjuntos_retorna_lista_com_tamanho_esperado(len_input,
     assert len(resultado_obtido) == len_resultado_esperado
 
 
+
 @pytest.mark.parametrize('len_input', [21, 100])
 def test_gera_subconjuntos_lanca_value_error_para_tamanhos_maiores_e_gerador_false(len_input):
     # construindo conjunto de teste com os elementos 0, 1, ..., len_input - 1
@@ -64,3 +65,4 @@ def test_gera_subconjuntos_nao_lanca_value_error_para_tamanhos_maiores_e_gerador
     iterador = gera_subconjuntos(conjunto_teste, gerador=True)
     num_elementos = sum(1 for _ in iterador)
     assert num_elementos == len_resposta_esperada
+    
