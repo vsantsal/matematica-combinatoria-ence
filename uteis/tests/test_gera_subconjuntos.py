@@ -40,7 +40,7 @@ def test_gera_subconjuntos_lanca_value_error_para_tamanhos_maiores_e_gerador_fal
     with pytest.raises(ValueError) as excecao:
         gera_subconjuntos(conjunto_teste)
 
-    assert 'gera_subconjuntos ainda não suporta conjuntos maiores' in excecao.value.args[0]
+    assert "para mais de 20 elementos utilizar 'gerador=True'" in excecao.value.args[0]
 
 
 @pytest.mark.parametrize('conjunto_input, cardinalidade, resultado_esperado', [

@@ -39,8 +39,7 @@ def gera_subconjuntos(conjunto: Union[Set, Sequence],
     if not gerador:
         limite_len_conjunto: int = 20
         if len(conjunto) > limite_len_conjunto:
-            raise ValueError('gera_subconjuntos ainda não '
-                             'suporta conjuntos maiores que {}'.format(limite_len_conjunto))
+            raise ValueError("para mais de {} elementos utilizar 'gerador=True'".format(limite_len_conjunto))
         iterador = [*iterador]
 
     return iterador
