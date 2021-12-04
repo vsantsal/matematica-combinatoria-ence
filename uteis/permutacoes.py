@@ -1,5 +1,5 @@
 from itertools import permutations
-from math import factorial
+from math import comb, factorial
 from typing import List, Tuple
 
 
@@ -25,3 +25,9 @@ def numero_de_permutacoes_caoticas(n: int) -> int:
     n_fat: int = factorial(n)
     fator: int = sum(((-1)**i)/factorial(i) for i in range(n+1))
     return int(n_fat*fator)
+
+
+def numero_de_permutacoes_caoticas_com_elementos_fixos(n_elementos: int, n_fixos: int) -> int:
+    c_n_m: int = comb(n_elementos, n_fixos)
+    perms_caoticas_elementos_restantes: int = numero_de_permutacoes_caoticas(n_elementos-n_fixos)
+    return c_n_m * perms_caoticas_elementos_restantes
