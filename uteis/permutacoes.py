@@ -1,4 +1,5 @@
 from itertools import permutations
+from math import factorial
 from typing import List, Tuple
 
 
@@ -18,3 +19,9 @@ def posicao_de_numero_em_permutacoes_algarismos(numero: int,
                                          in permutations(algarismos)]
     permutacoes_algarismos.sort(reverse=ordem_decrescente)
     return permutacoes_algarismos.index(numero) + 1
+
+
+def numero_de_permutacoes_caoticas(n: int) -> int:
+    n_fat: int = factorial(n)
+    fator: int = sum(((-1)**i)/factorial(i) for i in range(n+1))
+    return int(n_fat*fator)
